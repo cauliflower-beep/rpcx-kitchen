@@ -5,17 +5,21 @@ import (
 	"flag"
 	"github.com/smallnest/rpcx/client"
 	"log"
-	"rpcx-kitchen/1.4clientDemo/protocol"
+	"rpcx-kitchen/chapter1/1.4clientDemo/protocol"
 )
 
 var (
-	addr = flag.String("addr", "localhost:8972", "server address")
+	caddr = flag.String("addr", "localhost:8972", "server address")
 )
 
 func main() {
 	flag.Parse()
 
-	d, _ := client.NewPeer2PeerDiscovery("tcp@"+*addr, "")
+	// 1.5.1访问 tcp 服务
+	//d, _ := client.NewPeer2PeerDiscovery("tcp@"+*caddr, "")
+
+	// 1.5.2访问 http 服务
+	d, _ := client.NewPeer2PeerDiscovery("http@"+*caddr, "")
 
 	xclient := client.NewXClient("Arith", client.Failtry, client.RandomSelect, d, client.DefaultOption)
 	defer xclient.Close()

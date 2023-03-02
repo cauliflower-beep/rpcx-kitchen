@@ -5,7 +5,7 @@ import (
 	"flag"
 	"github.com/smallnest/rpcx/client"
 	"log"
-	"rpcx-kitchen/1.3serverDemo/protocol"
+	"rpcx-kitchen/chapter1/1.3serverDemo/protocol"
 )
 
 var (

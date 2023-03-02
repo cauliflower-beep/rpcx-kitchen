@@ -3,9 +3,9 @@ package main
 import (
 	"flag"
 	"log"
+	"rpcx-kitchen/chapter1/1.3serverDemo/protocol"
 
 	"github.com/smallnest/rpcx/server"
-	"rpcx-kitchen/1.3serverDemo/protocol"
 )
 
 var (
